@@ -1,0 +1,8 @@
+{
+    "sketch": "Code/MLX90393_Basic_Read/MLX90393_Basic_Read.ino",
+    "configuration": "JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none",
+    "board": "esp32:esp32:esp32",
+    "programmer": "esptool",
+    "port": "/dev/ttyUSB0",
+    "output": "Code/build/MLX90393_Basic_Read"
+}
