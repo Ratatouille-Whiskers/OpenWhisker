@@ -1,0 +1,6 @@
+{
+    "configuration": "target_core=cm7,split=100_0",
+    "board": "arduino:mbed_giga:giga",
+    "port": "/dev/ttyACM1",
+    "sketch": "TED_MLX90393.ino"
+}
