@@ -7,19 +7,30 @@ MLX90393::txyz data;
 
 bool dataReady = false;
 
-const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG;
+// Max reading rate is 385hz @ i2c_clk=100kHz
+// Max reading rate is 570hz @ i2c_clk=400kHz
+const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG; 
+// Removing the z-axis from the reading increases 385hz -> 460hz @ i2c_clk=100kHz
+// Removing the z-axis from the reading increases 570hz -> 680hz @ i2c_clk=400kHz
+// const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG; 
+// Removing the z-axis from the reading increases 460hz -> 578hz @ i2c_clk=100kHz
+// Removing the z-axis from the reading increases 680hz -> 870hz @ i2c_clk=400kHz
+// const byte axisFlags = MLX90393::Y_FLAG; 
 
 void setup(){
     Serial.begin(115200);
     delay(100);
+
+    // disable the internal pullup resistors on the i2c pin as we use external pull-ups (in this case the one on the Sensor PCB)
+    pinMode(SDA, INPUT);
+    pinMode(SCL, INPUT);
     Wire.begin();
-    // Wire.begin(22, 21);
     // Wire.setClock(100000);
-    Wire.setClock(400000);
+    // Wire.setClock(400000); // setup for 400kHz on a teensy 4.0 resulted in 570Hz (all axis) being read form the sensor on the interrupts
     delay(100);
 
     // Wire.begin(0x18);
-    byte status = mlx.begin(0,0,5);
+    // byte status = mlx.begin(0,0,5);
     byte status = mlx.begin(0,0,5, Wire);
 
     delay(100);
@@ -33,7 +44,7 @@ void setup(){
     Serial.println(status, BIN);
 
     //set the hall configuration (for setting the hall plate spin phase, 2-Phase: 0xC, 4-Phase: 0x0)
-    // mlx.setHallConf(0x0);
+    // mlx.setHallConf(0); // <=== NONE FUNCTIONING !!!
 
     mlx.setGainSel(1);
     mlx.setResolution(0, 0, 0); //x, y, z
@@ -70,6 +81,7 @@ void loop(){
         Serial.print(">X: "); Serial.println(data.x);
         Serial.print(">Y: "); Serial.println(data.y);
         Serial.print(">Z: "); Serial.println(data.z);
+
         dataReady = false;
         
         mlx.startMeasurement(
