@@ -7,16 +7,20 @@ MLX90393::txyz data;
 
 bool dataReady = false;
 
+const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG;
+
 void setup(){
     Serial.begin(115200);
     delay(100);
     Wire.begin();
+    // Wire.begin(22, 21);
+    // Wire.setClock(100000);
+    Wire.setClock(400000);
     delay(100);
-
-
 
     // Wire.begin(0x18);
     byte status = mlx.begin(0,0,5);
+    byte status = mlx.begin(0,0,5, Wire);
 
     delay(100);
 
@@ -40,7 +44,8 @@ void setup(){
 
     Serial.println("Measurement Started");
     mlx.startMeasurement(
-        MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
+        axisFlags //set the flags for what we want to read 
+        // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
     );
 
     //See MLX90393.h and .cpp for additional functions including:
@@ -55,19 +60,21 @@ void loop(){
         // mlx.readData(data);
 
         mlx.readMeasurement(
-            MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG, //set the flags for what we want to read 
+            axisFlags, //set the flags for what we want to read 
+            // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG, //set the flags for what we want to read 
             rawData // read the raw data
         );
         
-        // data = mlx.convertRaw(rawData);
+        data = mlx.convertRaw(rawData);
 
-        // Serial.print(">X: "); Serial.println(data.x);
-        // Serial.print(">Y: "); Serial.println(data.y);
-        // Serial.print(">Z: "); Serial.println(data.z);
+        Serial.print(">X: "); Serial.println(data.x);
+        Serial.print(">Y: "); Serial.println(data.y);
+        Serial.print(">Z: "); Serial.println(data.z);
         dataReady = false;
         
         mlx.startMeasurement(
-        MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
+        axisFlags //set the flags for what we want to read 
+        // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
         );
     }
 }
