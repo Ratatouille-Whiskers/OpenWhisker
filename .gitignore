@@ -33,3 +33,6 @@
 
 # arduino related directories
 Code/build
+.vscode
+Code/MLX90393_Basic_Read/.vscode
+Code/TED_MLX90393/.vscode
