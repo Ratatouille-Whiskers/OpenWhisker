@@ -7,14 +7,20 @@ MLX90393::txyz data;
 
 bool dataReady = false;
 
-// Max reading rate is 385hz @ i2c_clk=100kHz
-// Max reading rate is 570hz @ i2c_clk=400kHz
-const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG; 
-// Removing the z-axis from the reading increases 385hz -> 460hz @ i2c_clk=100kHz
-// Removing the z-axis from the reading increases 570hz -> 680hz @ i2c_clk=400kHz
-// const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG; 
-// Removing the z-axis from the reading increases 460hz -> 578hz @ i2c_clk=100kHz
-// Removing the z-axis from the reading increases 680hz -> 870hz @ i2c_clk=400kHz
+// Max reading rate is 385hz @ i2c_clk=100kHz (Teensy 4.0)
+// Max reading rate is 320hz @ i2c_clk=100kHz (Esp32)
+// Max reading rate is 570hz @ i2c_clk=400kHz (Teensy 4.0)
+// Max reading rate is hz @ i2c_clk=400kHz (Esp32)
+// const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG; 
+// Removing the z-axis from the reading increases 385hz -> 460hz @ i2c_clk=100kHz (Teensy 4.0)
+// Removing the z-axis from the reading increases 320hz -> hz @ i2c_clk=100kHz (Esp32)
+// Removing the z-axis from the reading increases 570hz -> 680hz @ i2c_clk=400kHz (Teensy 4.0)
+// Removing the z-axis from the reading increases hz -> hz @ i2c_clk=400kHz (Esp32)
+const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG; 
+// Removing the z-axis from the reading increases 460hz -> 578hz @ i2c_clk=100kHz (Teensy 4.0)
+// Removing the z-axis from the reading increases hz -> hz @ i2c_clk=100kHz (Esp32)
+// Removing the z-axis from the reading increases 680hz -> 870hz @ i2c_clk=400kHz (Teensy 4.0)
+// Removing the z-axis from the reading increases hz -> 449hz @ i2c_clk=400kHz (Esp32)
 // const byte axisFlags = MLX90393::Y_FLAG; 
 
 void setup(){
@@ -24,9 +30,10 @@ void setup(){
     // disable the internal pullup resistors on the i2c pin as we use external pull-ups (in this case the one on the Sensor PCB)
     pinMode(SDA, INPUT);
     pinMode(SCL, INPUT);
+    
     Wire.begin();
     // Wire.setClock(100000);
-    // Wire.setClock(400000); // setup for 400kHz on a teensy 4.0 resulted in 570Hz (all axis) being read form the sensor on the interrupts
+    Wire.setClock(400000); // setup for 400kHz on a teensy 4.0 resulted in 570Hz (all axis) being read form the sensor on the interrupts
     delay(100);
 
     // Wire.begin(0x18);
