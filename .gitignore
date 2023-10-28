@@ -33,3 +33,4 @@
 
 # arduino related directories
 Code/build
+.vscode
