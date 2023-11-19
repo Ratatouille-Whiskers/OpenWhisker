@@ -30,3 +30,4 @@
 - Increase the sockets by 0.25mm to try and account for print tolerances
   - Done for _Whisker hole_
   - Done for _Magnet hole_
+
