@@ -8,9 +8,12 @@
 
 ### V2
 
-- **CURRENT NEEDS TESTING**
-
 - Adjusted the height so the Sensor can more easily socket into a breadboard when assembled
+
+### V3
+
+- recenter Silicone Bearing Hole
+- added internal cut-out ring in bearing hole so that it can hold better
 
 ## Whisker Socket
 
