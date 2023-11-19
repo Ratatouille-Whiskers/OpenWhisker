@@ -18,6 +18,7 @@
 
 - re-centered Silicone Bearing Hole
 - added internal cut-out ring in bearing hole so that it can hold better
+- Shortened the Height by ~2mm therefore making the bearing space shorter too
 
 ## Whisker Socket
 
