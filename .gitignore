@@ -39,3 +39,6 @@ Code/TED_MLX90393/.vscode
 
 # FreeCAD files
 *.FCStd1
+
+# Prusa Slicer files
+*.3mf
