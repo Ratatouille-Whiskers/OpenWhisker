@@ -1,5 +1,13 @@
 # Model Notes
 
+General TODO:
+
+- [ ] Create a Mould "Platter" For Ratio Testing
+- [ ] Create Easy-Edit Parametric Versions for the parts
+  - [ ] Whisker Base
+  - [ ] Whisker Socket
+  - [ ] Whisker Silicone Bearing Mould
+
 ## Whisker Base
 
 ### [V1](STL/Whisker%20Base/Whisker%20Base%20V1.stl)
