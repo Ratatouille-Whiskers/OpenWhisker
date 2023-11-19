@@ -38,8 +38,6 @@ Top Angle View:
 
 ![Whisker Socket V2 - Bottom](../Images/Whisker%20Sicket%20V2%20-%20Bottom.png)
 
-- **CURRENT NEEDS TESTING**
-
 - Increase the sockets by 0.25mm to try and account for print tolerances
   - Done for _Whisker hole_
     - Now hold 3mm diameter rods fine
@@ -48,10 +46,38 @@ Top Angle View:
 
 - TODO: _MAYBE_ make it slightly tighter for a press-fit option
 
-## Whisker Silicon Bearing Mold
+#### V2.1
 
-### [V1](STL/Whisker%20Silicon%20Bearing%20Mold/Whisker%20Silicon%20Bearing%20Mold%20V1.stl)
+- Made it 1mm shorter on top
+
+## Whisker Silicon Bearing Mould
+
+### Single Mould
+
+#### [V1](STL/Whisker%20Silicon%20Bearing%20Mold/Whisker%20Silicon%20Bearing%20Mould%20V1.stl)
 
 ![Whisker Silicon Bearing Mold V1](../Images/Whisker%20Silicon%20Bearing%20Mold%20V1.png)
 
 - Modified version of V3 to form the mold for the Silicon Bearing to test the various silicones
+
+#### [V2](STL/Whisker%20Silicon%20Bearing%20Mold/Whisker%20Silicon%20Bearing%20Mould%20V2.stl)
+
+- Added the socket to the mold so that bearing is moulded to fit with the socket installed
+
+### 2-Part Mould
+
+#### Top Plate
+
+##### [V1](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V1%20-%20Top%20Plate.stl)
+
+- Top plate for pairing with a bottom plate for the bearing mould
+  
+#### Bottom Plate
+
+##### [V1](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V1%20-%20Bottom%20Plate.stl)
+
+- Bottom Plate for pairing with a top plate
+
+##### [V2](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V2%20-%20Bottom%20Plate.stl)
+
+- Added the socket to the mold so that bearing is moulded to fit with the socket installed
