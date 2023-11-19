@@ -1,6 +1,8 @@
 #include <MLX90393.h>
 #include <Wire.h>
 
+#define DRDY_pin 5
+
 MLX90393 mlx;
 MLX90393::txyzRaw rawData;
 MLX90393::txyz data;
@@ -25,24 +27,27 @@ const byte axisFlags = MLX90393::X_FLAG | MLX90393::Y_FLAG;
 
 void setup(){
     Serial.begin(115200);
-    delay(100);
+
+    /* Wait for serial on USB platforms. */
+    while (!Serial) {
+        delay(10);
+    }
+    
 
     // disable the internal pullup resistors on the i2c pin as we use external pull-ups (in this case the one on the Sensor PCB)
     pinMode(SDA, INPUT);
     pinMode(SCL, INPUT);
     
-    Wire.begin();
+    // Wire.setSDA(16); 
+    // Wire.setSCL(17);
+    
     // Wire.setClock(100000);
     Wire.setClock(400000); // setup for 400kHz on a teensy 4.0 resulted in 570Hz (all axis) being read form the sensor on the interrupts
-    delay(100);
-
+    Wire.begin();
     // Wire.begin(0x18);
     // byte status = mlx.begin(0,0,5);
-    byte status = mlx.begin(0,0,5, Wire);
-
-    delay(100);
-
-    attachInterrupt(5, mlxInterrupt, RISING);
+    byte status = mlx.begin(0, 0, DRDY_pin, Wire);
+    attachInterrupt(DRDY_pin , mlxInterrupt, RISING);
     
 
     //Report status from configuration
@@ -61,15 +66,18 @@ void setup(){
     delay(100);
 
     Serial.println("Measurement Started");
-    mlx.startMeasurement(
+    mlx.startBurst(
         axisFlags //set the flags for what we want to read 
-        // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
     );
 
     //See MLX90393.h and .cpp for additional functions including:
     //set/getOverSample, set/getTemperatureOverSample, set/getDigitalFiltering, set/getResolution
     //set/getTemperatureCompensation, setOffsets, setWThresholds
 }
+
+int reads = 0;
+unsigned long duration = micros();
+unsigned long prev_time = micros();
 
 void loop(){
     // mlx.readData(data); //Read the values from the sensor
@@ -79,11 +87,23 @@ void loop(){
 
         mlx.readMeasurement(
             axisFlags, //set the flags for what we want to read 
-            // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG, //set the flags for what we want to read 
             rawData // read the raw data
         );
         
         data = mlx.convertRaw(rawData);
+
+        // reads++;
+        // if(reads > 1000){
+        //     duration = micros() - prev_time;
+        //     Serial.print(duration);
+        //     Serial.print(" ");
+        //     Serial.print(reads);
+        //     Serial.print(" | ");
+        //     Serial.print("READ FREQ:");
+        //     Serial.println(1000000.0/(float(duration)/reads));
+        //     reads = 0;
+        //     prev_time = micros();
+        // }
 
         Serial.print(">X: "); Serial.println(data.x);
         Serial.print(">Y: "); Serial.println(data.y);
@@ -91,10 +111,9 @@ void loop(){
 
         dataReady = false;
         
-        mlx.startMeasurement(
-        axisFlags //set the flags for what we want to read 
-        // MLX90393::X_FLAG | MLX90393::Y_FLAG | MLX90393::Z_FLAG //set the flags for what we want to read 
-        );
+        // mlx.startMeasurement(
+        // axisFlags //set the flags for what we want to read 
+        // );
     }
 }
 
