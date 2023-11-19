@@ -47,3 +47,11 @@ Top Angle View:
     - Can hold a 5x1 magnet with a drop of super glue
 
 - TODO: _MAYBE_ make it slightly tighter for a press-fit option
+
+## Whisker Silicon Bearing Mold
+
+### [V1](STL/Whisker%20Silicon%20Bearing%20Mold/Whisker%20Silicon%20Bearing%20Mold%20V1.stl)
+
+![Whisker Silicon Bearing Mold V1](../Images/Whisker%20Silicon%20Bearing%20Mold%20V1.png)
+
+- Modified version of V3 to form the mold for the Silicon Bearing to test the various silicones
