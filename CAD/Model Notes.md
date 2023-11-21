@@ -79,6 +79,10 @@ Top Angle View:
 ##### [V1](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V1%20-%20Top%20Plate.stl)
 
 - Top plate for pairing with a bottom plate for the bearing mould
+
+##### [V2](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V2%20-%20Top%20Plate.stl)
+
+- Made thicker so that the split is better positioned
   
 #### Bottom Plate
 
@@ -89,3 +93,7 @@ Top Angle View:
 ##### [V2](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V2%20-%20Bottom%20Plate.stl)
 
 - Added the socket to the mold so that bearing is moulded to fit with the socket installed
+
+##### [V3](STL/Whisker%20Silicon%20Bearing%20Mould/2%20Part/Whisker%20Silicon%20Bearing%20Mould%20V3%20-%20Bottom%20Plate.stl)
+
+- Made shorter so that the split is better positioned
