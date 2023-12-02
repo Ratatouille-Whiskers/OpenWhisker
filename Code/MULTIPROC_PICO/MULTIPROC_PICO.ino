@@ -88,11 +88,10 @@ void setup() {
     mlx.setDigitalFiltering(0);
     mlx.setResolution(1, 1, 1);
     mlx.setTemperatureCompensation(0);
-    Serial.println(mlx.setOffsets(0,0,0));
 
     delay(100);
 
-    Serial.printf("Measurement Starting\n");
+    // Serial.printf("Measurement Starting\n");
     mlx.startBurst(axisFlags);
     
     delay(500);
@@ -120,7 +119,7 @@ void setup() {
         rawData_offset.z = (rawData_offset.z >> 1) + (rawData.z >> 1);
 
         i++;
-        Serial.printf("I: %u\r\n", i);
+        // Serial.printf("I: %u\r\n", i);
 
       }
     }
@@ -130,9 +129,9 @@ void setup() {
     // rawData_offset.y -= (uint16_t) 0x8000;
     // rawData_offset.z -= (uint16_t) 0x8000;
 
-    Serial.printf("offset_X: %u\r\n", rawData_offset.x);
-    Serial.printf("offset_Y: %u\r\n", rawData_offset.y);
-    Serial.printf("offset_Z: %u\r\n", rawData_offset.z);
+    // Serial.printf("offset_X: %u\r\n", rawData_offset.x);
+    // Serial.printf("offset_Y: %u\r\n", rawData_offset.y);
+    // Serial.printf("offset_Z: %u\r\n", rawData_offset.z);
 
     // delay(15000);
 
