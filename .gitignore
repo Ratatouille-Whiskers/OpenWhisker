@@ -42,3 +42,4 @@ Code/TED_MLX90393/.vscode
 
 # Prusa Slicer files
 *.3mf
+*.FCBak

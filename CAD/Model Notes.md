@@ -28,6 +28,13 @@ General TODO:
 - added internal cut-out ring in bearing hole so that it can hold better
 - Shortened the Height by ~2mm therefore making the bearing space shorter too
 
+### [V4](STL/Whisker%20Base/Whisker%20Base%20V4.stl)
+
+- Made it 4mm taller around the bearing cutout area
+- Changed the bearing top chamfer from 1mm to 2mm
+- Increased the bearing "outer" ring lip from 3mm tall to 4 mm tall
+  - Re-centered this to match the new bearing height
+
 ## Whisker Socket
 
 ### [V1](STL/Whisker%20Socket/Whisker%20Socket%20V1.stl)
@@ -37,6 +44,18 @@ General TODO:
 - The socket for inserting a a 5x1 magnet was also too small and need to be wider
 
 ### [V2](STL/Whisker%20Socket/Whisker%20Socket%20V2.stl)
+
+- Made it shorter to match the changes to V3 of the base
+
+### [V3](STL/Whisker%20Socket/Whisker%20Socket%20V3.stl)
+
+- Increase the outer lip rings radius from 5mm to 6mm
+  - Re-centered it up the socket
+- Increase the height from 9mm to 13mm to better suit V4 of the base
+  - Increased the height of the socket "stopper" so that the whisker doesn't sit too far in because of the changes
+    - Insertable whisker length has changed from 3mm to 5mm
+- Increase the top chamfer from 1mm to 1.5mm
+- Changed the Magnet Hole from a radius of 2.65m to 2.6mm for better printer tolerances for press fit for a 5x1mm magnet
 
 Top Angle View:
 
