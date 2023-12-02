@@ -57,6 +57,10 @@ General TODO:
 - Increase the top chamfer from 1mm to 1.5mm
 - Changed the Magnet Hole from a radius of 2.65m to 2.6mm for better printer tolerances for press fit for a 5x1mm magnet
 
+### [V3.1](STL/Whisker%20Socket/Whisker%20Socket%20V3_1.stl)
+
+- Corrected Height of the bearing due to error in making it 13mm tall instead of 12mm
+
 Top Angle View:
 
 ![Whisker Socket V2 - Top](../Images/Whisker%20Sicket%20V2%20-%20Top.png)
