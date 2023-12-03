@@ -2,7 +2,7 @@
 
 General TODO:
 
-- [ ] Create a Mould "Platter" For Ratio Testing
+- [X] Create a Mould "Platter" For Ratio Testing
 - [ ] Create Easy-Edit Parametric Versions for the parts
   - [ ] Whisker Base
   - [ ] Whisker Socket
@@ -47,20 +47,6 @@ General TODO:
 
 - Made it shorter to match the changes to V3 of the base
 
-### [V3](STL/Whisker%20Socket/Whisker%20Socket%20V3.stl)
-
-- Increase the outer lip rings radius from 5mm to 6mm
-  - Re-centered it up the socket
-- Increase the height from 9mm to 13mm to better suit V4 of the base
-  - Increased the height of the socket "stopper" so that the whisker doesn't sit too far in because of the changes
-    - Insertable whisker length has changed from 3mm to 5mm
-- Increase the top chamfer from 1mm to 1.5mm
-- Changed the Magnet Hole from a radius of 2.65m to 2.6mm for better printer tolerances for press fit for a 5x1mm magnet
-
-### [V3.1](STL/Whisker%20Socket/Whisker%20Socket%20V3_1.stl)
-
-- Corrected Height of the bearing due to error in making it 13mm tall instead of 12mm
-
 Top Angle View:
 
 ![Whisker Socket V2 - Top](../Images/Whisker%20Sicket%20V2%20-%20Top.png)
@@ -80,6 +66,30 @@ Top Angle View:
 #### V2.1
 
 - Made it 1mm shorter on top
+
+### [V3](STL/Whisker%20Socket/Whisker%20Socket%20V3.stl)
+
+- Increase the outer lip rings radius from 5mm to 6mm
+  - Re-centered it up the socket
+- Increase the height from 9mm to 13mm to better suit V4 of the base
+  - Increased the height of the socket "stopper" so that the whisker doesn't sit too far in because of the changes
+    - Insertable whisker length has changed from 3mm to 5mm
+- Increase the top chamfer from 1mm to 1.5mm
+- Changed the Magnet Hole from a radius of 2.65m to 2.6mm for better printer tolerances for press fit for a 5x1mm magnet
+
+### [V3.1](STL/Whisker%20Socket/Whisker%20Socket%20V3_1.stl)
+
+- Corrected Height of the bearing due to error in making it 13mm tall instead of 12mm
+
+## Casting Jig
+
+### V1
+
+- Create initial Design
+
+### V2
+
+- Removed Small wings as they made it hard to remove the whisker
 
 ## Whisker Silicon Bearing Mould
 
