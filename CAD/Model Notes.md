@@ -81,6 +81,14 @@ Top Angle View:
 
 - Corrected Height of the bearing due to error in making it 13mm tall instead of 12mm
 
+### [V4](STL/Whisker%20Socket/Whisker%20Socket%20V4.stl)
+
+This change is done in hope that the bearing and socket hold each other better then the previous versions
+
+- Removed the center ring
+- Added a ring lip inline with the bottom of the socket
+- added a ring lip near the top
+
 ## Casting Jig
 
 ### V1
