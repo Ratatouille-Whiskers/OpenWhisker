@@ -29,7 +29,7 @@ def read_serial_port(port, baud_rate=115200):
 
 if __name__ == "__main__":
 
-    serial_port = "/dev/serial/by-id/usb-Raspberry_Pi_Pico_E660D051138B5F36-if00"
+    serial_port = "/dev/serial/by-id/usb-Raspberry_Pi_Pico_E461184767093A21-if00"
     # serial_port = input("Enter the serial port name (e.g., COM3 or /dev/ttyUSB0): ") or find_serial_port()
     baud_rate = 115200
     # baud_rate = int(input("Enter the baud rate (default is 115200): ") or 115200)
