@@ -1,5 +1,5 @@
 # OpenWhisker
- An Open Source Whisker Sensor
+ An Open Source Whisker Sensor using a MLX90393
 
 ## Navigation
 
